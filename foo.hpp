@@ -6,14 +6,14 @@
 #include <list>
 #include <vector>
 
-std::vector< char > foo(std::list< Human >& people)
+std::vector<char> foo(std::list<Human>& people)
 {
-    std::vector< char > retval(people.size());
+    std::vector<char> retval(people.size());
 
-    std::for_each(humans.begin(), humans.end(),
-                  [&result, i = humans.size()](Human& h) mutable {
+    std::for_each(people.begin(), people.end(),
+                  [&retval, i = people.size()](Human& h) mutable {
                       h.birthday();
-                      result[--i] = h.isMonster() ? 'n' : 'y';
+                      retval[--i] = h.isMonster() ? 'n' : 'y';
                   });
 
     return retval;
